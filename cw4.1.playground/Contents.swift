@@ -40,3 +40,32 @@ for number in numbers{
 }
 
 print(numbers)
+ 
+//var num = 1
+
+//if Int(numbers)! % 2 = 0 {
+//    print("even")
+//}
+//else Int(numbers) % 2 = 1{
+//    print("odd")
+//}
+
+for number in numbers{
+//    print(number)
+    if Int(number) % 2 == 0 {
+        print("even")
+    }
+    else {
+        print("odd")
+    }
+}
+
+for number in numbers{
+//    print(number)
+    if Int(number) % 2 == 0 {
+        print(number)
+    }
+//    else {
+//     //   print("odd")
+//    }
+}

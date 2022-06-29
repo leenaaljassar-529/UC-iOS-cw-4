@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
- @State   var items = ["twix", "kinder", "mars", "aero" , "kitkat"]
+ @State   var items = ["bananas", "cherry", "kiwi", "watermelon", "strawberry", "pear"]
+   // @State   var items = ["bananas", "cherry", "kiwi", "watermelon"]
    @State var newItem = ""
     var body: some View {
+        VStack{
        
         List (items, id:\.self){ item in
             HStack{
                 Image(item)
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 60, height: 60)
                 Text(item)
             }
             
@@ -46,6 +48,7 @@ struct ContentView: View {
                 //baclground color and foregroudn color padding
             }
             
+        }
         }
       
     }
