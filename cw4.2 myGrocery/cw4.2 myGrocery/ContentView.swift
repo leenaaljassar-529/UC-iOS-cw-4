@@ -21,34 +21,49 @@ struct ContentView: View {
                     .frame(width: 60, height: 60)
                 Text(item)
             }
-            
+            .onTapGesture {
+                items.remove(at: 0)
+            }
         }
         HStack{
-           // Button
-            //textfiels
-            //button
           
-            
             Button {
                 items.append(newItem)
             } label:{
                 Image(systemName: "plus")
+                    .foregroundColor(Color.white)
+                    .frame(width: 50, height: 50)
+                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.642, green: 0.885, blue: 0.383, opacity: 0.805)/*@END_MENU_TOKEN@*/)
                     .cornerRadius(20)
-                //baclground color and foregroudn color padding
+            
             }
             
             TextField("New Item", text: $newItem)
+            
+//            Button {
+//                items.remove(at:(0))
+//            } label:{
+//                Image(systemName: "minus")
+//                    .foregroundColor(Color.white)
+//                    .frame(width: 50, height: 50)
+//                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.975, green: 0.281, blue: 0.283, opacity: 0.693)/*@END_MENU_TOKEN@*/)
+//                    .cornerRadius(20)
+//
+//            }
             
             Button {
                 items.remove(at:(0))
             } label:{
                 Image(systemName: "minus")
+                    .foregroundColor(Color.white)
                     .frame(width: 50, height: 50)
+                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.975, green: 0.281, blue: 0.283, opacity: 0.693)/*@END_MENU_TOKEN@*/)
                     .cornerRadius(20)
-                //baclground color and foregroudn color padding
+                
             }
-            
         }
+        .padding()
+            
         }
       
     }
