@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
- @State   var items = ["bananas", "cherry", "kiwi", "watermelon", "strawberry", "pear"]
-   // @State   var items = ["bananas", "cherry", "kiwi", "watermelon"]
+    @State   var items = ["bananas", "cherry", "kiwi", "watermelon", "strawberry", "pear"]
+    
+    @State var removeIndex = 0
+    
+    
    @State var newItem = ""
     var body: some View {
         VStack{
@@ -22,7 +25,12 @@ struct ContentView: View {
                 Text(item)
             }
             .onTapGesture {
-                items.remove(at: 0)
+                
+                if (items.firstIndex(of: item) != nil){
+                    removeIndex = items.firstIndex(of: item)!
+                } else {
+                    removeIndex=0
+                }
             }
         }
         HStack{
@@ -40,19 +48,11 @@ struct ContentView: View {
             
             TextField("New Item", text: $newItem)
             
-//            Button {
-//                items.remove(at:(0))
-//            } label:{
-//                Image(systemName: "minus")
-//                    .foregroundColor(Color.white)
-//                    .frame(width: 50, height: 50)
-//                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.975, green: 0.281, blue: 0.283, opacity: 0.693)/*@END_MENU_TOKEN@*/)
-//                    .cornerRadius(20)
-//
-//            }
+
             
             Button {
-                items.remove(at:(0))
+            //    items.remove(at:(0))
+                items.remove(at:(removeIndex))
             } label:{
                 Image(systemName: "minus")
                     .foregroundColor(Color.white)
